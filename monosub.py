@@ -8,7 +8,7 @@ from util import clean
 
 single_order = 'etaoinshrdlcumwfgypbvkjxqz'
 NEGATIVE_INFINITY = -20
-ITERATIONS = 4000
+ITERATIONS = 10000
 
 def ngrams(s, n):
     return (s[i:i+n] for i in range(len(s)-n+1))
@@ -102,7 +102,7 @@ def main():
     ng = read_frequencies(ng)
     lpq = logprobs(ng)
 
-    key = search(args.ngram_size, lpq, s)
+    key = search(args.ngram_size, lpq, s, True)
     print(decrypt(s, key))
 
 
