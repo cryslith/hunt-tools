@@ -105,6 +105,5 @@ def main():
     key = search(args.ngram_size, lpq, s, True)
     print(decrypt(s, key))
 
-
 if __name__ == '__main__':
     main()
